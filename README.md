@@ -9,10 +9,10 @@ This project was built as a learning project to explore runit-based systems, ser
 - Built with Qt5
 - Searchbar filtering
 - Pkexec implementation
+- Basic start/stop/restart functionality for detected services
 
 ## Limitations
 - No consistent live updates
-- No start/stop/restart functionality
 
 ## Future Plans
 - Implement features from the section above
@@ -27,7 +27,6 @@ This project was built as a learning project to explore runit-based systems, ser
 
 
 ## Current State
-run-guit must be run in the terminal using "sudo ./run-guit"
 The program is able to list all services in /etc/sv
 It can stop and start services that are detected as "Running" or "Stopped". Stopping a tty service does update to "Stopped", but bluetoothd does not when disabled (visual bug). Stopping dbus causes desktop environment to vanish (as expected)
-If run without sudo, all services have a status of "Unknown"
+If the program is run without sudo, all services have a status of "Unknown"
