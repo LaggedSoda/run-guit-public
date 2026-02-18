@@ -4,12 +4,13 @@ A Qt-based GUI to view and manage runit services on Linux.
 This project was built as a learning project to explore runit-based systems, service management, and basic GUI development.
 
 ## Features (Current)
-- Lists services from /etc/sv
-- Small and lightweight executable (~115KiB), build folder is (<1MiB)
+- Lists services from /var/service
+- Small and lightweight executable (~120KiB), build folder is (<1MiB)
 - Built with Qt5
 - Searchbar filtering
-- Pkexec implementation
+- Pkexec implementation (via run-guit-launcher.sh)
 - Basic start/stop/restart functionality for detected services
+- CTRL + R for refreshing
 
 ## Limitations
 - No consistent live updates
@@ -17,8 +18,8 @@ This project was built as a learning project to explore runit-based systems, ser
 ## Future Plans
 - Better security
 - Improved UI
-- Live Updates
-- Quick actions (keybinds)
+- Live Updates (perhaps via a config file to refresh every x seconds)
+- Config file (for changing service directory and other future features) -> maybe settings menu
 
 ## Ambitious Future Plans
 - Create a finished version
