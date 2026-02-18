@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
 , ui(new Ui::MainWindow)      // allocate & construct the UI
 {
     ui->setupUi(this);            // set up widgets from your .ui file
+    ui->serviceTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->serviceTable->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(ui->serviceTable, &QTableWidget::customContextMenuRequested, this, &MainWindow::showContextMenu);
     populateServiceTable();
