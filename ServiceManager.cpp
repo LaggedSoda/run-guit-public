@@ -23,9 +23,9 @@ ServiceStatus ServiceManager::getServiceStatus(const QString& serviceName) {
 
     QString output = process.readAllStandardOutput();
 
-    if (output.contains("run:"))                       return ServiceStatus::Running;
-    if (output.contains("down:"))                      return ServiceStatus::Down;
-    if (output.contains("supervise not running"))      return ServiceStatus::Error;
+    if (output.contains("down:") || output.contains("normally up;"))                    return ServiceStatus::Down;
+    if (output.contains("supervise not running"))                                       return ServiceStatus::Error;
+    if (output.contains("run:"))                                                        return ServiceStatus::Running;
 
     return ServiceStatus::Unknown;
 }

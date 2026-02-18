@@ -8,6 +8,8 @@
 #include <QMenu>
 #include <QProcess>
 #include <QThread>
+#include <QShortcut>
+#include <QKeySequence>
 
 MainWindow::MainWindow(QWidget *parent)
 : QMainWindow(parent)
@@ -19,6 +21,8 @@ MainWindow::MainWindow(QWidget *parent)
     populateServiceTable();
 
     connect(ui->searchBox, &QLineEdit::textChanged, this, &MainWindow::filterServices);
+    QShortcut* refreshShortcut = new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_R), this);
+    connect(refreshShortcut, &QShortcut::activated, this, &MainWindow::populateServiceTable);
 }
 
 MainWindow::~MainWindow()
