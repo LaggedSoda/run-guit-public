@@ -5,7 +5,7 @@ This project was built as a learning project to explore runit-based systems, ser
 
 ## Features (Current)
 - Lists services from /etc/sv
-- Small and lightweight executable (~115KiB), build file is (<1MiB)
+- Small and lightweight executable (~115KiB), build folder is (<1MiB)
 - Built with Qt5
 - Searchbar filtering
 - Pkexec implementation
