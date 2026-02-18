@@ -5,7 +5,7 @@ This project was built as a learning project to explore runit-based systems, ser
 
 ## Features (Current)
 - Lists services from /etc/sv
-- Small and lightweight (~115KB)
+- Small and lightweight executable (~115KiB), build file is (<1MiB)
 - Built with Qt5
 - Searchbar filtering
 - Pkexec implementation
@@ -15,10 +15,10 @@ This project was built as a learning project to explore runit-based systems, ser
 - No consistent live updates
 
 ## Future Plans
-- Implement features from the section above
 - Better security
 - Improved UI
 - Live Updates
+- Quick actions (keybinds)
 
 ## Ambitious Future Plans
 - Create a finished version
@@ -27,6 +27,7 @@ This project was built as a learning project to explore runit-based systems, ser
 
 
 ## Current State
-The program is able to list all services in /etc/sv
-It can stop and start services that are detected as "Running" or "Stopped". Stopping a tty service does update to "Stopped", but bluetoothd does not when disabled (visual bug). Stopping dbus causes desktop environment to vanish (as expected)
+The program is able to list all services in "/var/service"
+It can start, stop, and restart services that are detected as "Running" or "Stopped"
 If the program is run without sudo, all services have a status of "Unknown"
+It unforunately must be run in a terminal with either "sudo ./run-guit" or by using the included "run-guit-launcher.sh" script
