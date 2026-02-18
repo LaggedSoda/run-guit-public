@@ -9,6 +9,9 @@ enum class ServiceStatus {
     Running,
     Down,
     Error,
+    Restarting,
+    Starting,
+    Stopping,
     Unknown
 };
 
@@ -23,7 +26,7 @@ public:
     ServiceStatus getServiceStatus(const QString& serviceName);
 
 private:
-    QString serviceDir = "/etc/sv";
+    QString serviceDir = "/var/service"; // alternatively, /etc/sv all of them but aren't linked'
 };
 
 #endif // SERVICEMANAGER_H
